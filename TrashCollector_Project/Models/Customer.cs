@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -15,5 +16,8 @@ namespace TrashCollector_Project.Models
         public int Zipcode { get; set; }
         public DateTime Start { get; set; }
         public DateTime End { get; set; }
+        [ForeignKey("ApplicationUser")]
+        public int UserId { get; set; }
+        public ApplicationUser User { get; set; }
     }
 }
