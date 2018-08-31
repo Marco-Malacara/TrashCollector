@@ -14,9 +14,7 @@ namespace TrashCollector_Project.Migrations
 
         protected override void Seed(Models.ApplicationDbContext context)
         {
-            context.Employee.AddOrUpdate(x => x.Id,
-                new Models.Employee() { Id = 1, FristName = "Marco", LastName = "Malacara", Zipcode = 53142}
-            );
+           
         }
     }
 }
