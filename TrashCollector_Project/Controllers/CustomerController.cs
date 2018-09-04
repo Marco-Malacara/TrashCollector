@@ -17,9 +17,15 @@ namespace TrashCollector_Project.Controllers
         }
 
         // GET: Customer/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(string id)
         {
-            return View();
+            ApplicationDbContext db = new ApplicationDbContext();
+            Customer details = db.Customer.SingleOrDefault(identity => identity.Id == Convert.ToInt32(id));
+            if (details == null)
+            {
+                return HttpNotFound();
+            }
+            return View(details);
         }
 
         // GET: Customer/Create
@@ -44,7 +50,7 @@ namespace TrashCollector_Project.Controllers
                 };
                 db.Customer.Add(customer);
                 db.SaveChanges();
-                return View("Index", "Customer");
+                return RedirectToAction("Index", "Customer", null);
             }
             catch
             {
