@@ -1,8 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
+using TrashCollector_Project.Models;
+using System;
 
 namespace TrashCollector_Project.Controllers
 {
@@ -28,13 +30,21 @@ namespace TrashCollector_Project.Controllers
 
         // POST: Customer/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(FormCollection collection, string id)
         {
             try
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                ApplicationDbContext db = new ApplicationDbContext();
+                Customer customer = new Customer()
+                {
+                    ApplicationUserId = id,
+                    Name = collection["Name"],
+                    Address = collection["Address"],
+                    Zipcode = Convert.ToInt32(collection["Zipcode"]),
+                };
+                db.Customer.Add(customer);
+                db.SaveChanges();
+                return View("Index", "Customer");
             }
             catch
             {

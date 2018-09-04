@@ -13,8 +13,9 @@ namespace TrashCollector_Project.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public int Zipcode { get; set; }
-        public DateTime Start { get; set; }
-        public DateTime End { get; set; }
+        public string Address { get; set; }
+        public DateTime? Start { get; set; }
+        public DateTime? End { get; set; }
         [ForeignKey("ApplicationUser")]
         public string ApplicationUserId { get; set; }
         public ApplicationUser ApplicationUser { get; set; }

@@ -210,6 +210,18 @@
     <Compile Include="Migrations\201808311534574_UserApplcation.Designer.cs">
       <DependentUpon>201808311534574_UserApplcation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808311742319_CusomAdress.cs" />
+    <Compile Include="Migrations\201808311742319_CusomAdress.Designer.cs">
+      <DependentUpon>201808311742319_CusomAdress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808311912235_CustomerDB.cs" />
+    <Compile Include="Migrations\201808311912235_CustomerDB.Designer.cs">
+      <DependentUpon>201808311912235_CustomerDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809041310171_databaseFixA.cs" />
+    <Compile Include="Migrations\201809041310171_databaseFixA.Designer.cs">
+      <DependentUpon>201809041310171_databaseFixA.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -281,6 +293,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Customer\Create.cshtml" />
+    <Content Include="Views\Shared\_CustomerLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -304,6 +317,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808311534574_UserApplcation.resx">
       <DependentUpon>201808311534574_UserApplcation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808311742319_CusomAdress.resx">
+      <DependentUpon>201808311742319_CusomAdress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808311912235_CustomerDB.resx">
+      <DependentUpon>201808311912235_CustomerDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809041310171_databaseFixA.resx">
+      <DependentUpon>201809041310171_databaseFixA.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
