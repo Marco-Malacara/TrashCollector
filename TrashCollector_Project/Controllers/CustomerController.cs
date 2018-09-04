@@ -45,11 +45,14 @@ namespace TrashCollector_Project.Controllers
                 {
                     ApplicationUserId = id,
                     Name = collection["Name"],
+                    State = collection["State"],
+                    City = collection["City"],
                     Address = collection["Address"],
                     Zipcode = Convert.ToInt32(collection["Zipcode"]),
-                    Schedule = Convert.ToDateTime(collection["PickUp"])
+                    Schedule = Convert.ToDateTime(collection["Schedule"])
                 };
                 db.Customer.Add(customer);
+                SetUpWeeklyPickUp(id);
                 db.SaveChanges();
                 return RedirectToAction("Index", "Customer", null);
             }
@@ -57,6 +60,20 @@ namespace TrashCollector_Project.Controllers
             {
                 return View();
             }
+        }
+        public ActionResult SetUpWeeklyPickUp(string id)
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+            Customer customer = db.Customer.SingleOrDefault(identity => identity.ApplicationUserId == id);
+            return View(customer);
+        }
+        public ActionResult SetUpWeeklyPickUp(Customer customer)
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+            customer.Schedule = DateTime.Now.AddDays(7);
+            db.Entry(customer).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Index", "Customer", null);
         }
 
         // GET: Customer/Edit/5
