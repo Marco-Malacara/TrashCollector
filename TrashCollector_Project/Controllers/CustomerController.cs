@@ -17,10 +17,10 @@ namespace TrashCollector_Project.Controllers
         }
 
         // GET: Customer/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details(int? id)
         {
             ApplicationDbContext db = new ApplicationDbContext();
-            Customer details = db.Customer.SingleOrDefault(identity => identity.Id == Convert.ToInt32(id));
+            Customer details = db.Customer.SingleOrDefault(identity => identity.Id == id);
             if (details == null)
             {
                 return HttpNotFound();
@@ -47,6 +47,7 @@ namespace TrashCollector_Project.Controllers
                     Name = collection["Name"],
                     Address = collection["Address"],
                     Zipcode = Convert.ToInt32(collection["Zipcode"]),
+                    Schedule = Convert.ToDateTime(collection["PickUp"])
                 };
                 db.Customer.Add(customer);
                 db.SaveChanges();
@@ -100,6 +101,10 @@ namespace TrashCollector_Project.Controllers
             {
                 return View();
             }
+        }
+        public ActionResult CreatePickUp(Customer customer)
+        {
+            return View();
         }
     }
 }
