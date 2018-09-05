@@ -14,5 +14,8 @@ namespace TrashCollector_Project.Models
         public DateTime? WeekTwo { get; set; }
         public DateTime? WeekThree { get; set; }
         public DateTime? WeekFour { get; set; }
+        public DateTime? SpecialPickUp { get; set; }
+        public DateTime? StartPickUp { get; set; }
+        public DateTime? EndPickUp { get; set; }
     }
 }

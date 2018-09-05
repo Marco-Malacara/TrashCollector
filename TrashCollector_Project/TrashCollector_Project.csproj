@@ -246,6 +246,18 @@
     <Compile Include="Migrations\201809051428167_ForeignKeyPickUp.Designer.cs">
       <DependentUpon>201809051428167_ForeignKeyPickUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809051433296_PickUpForeignKeyFix.cs" />
+    <Compile Include="Migrations\201809051433296_PickUpForeignKeyFix.Designer.cs">
+      <DependentUpon>201809051433296_PickUpForeignKeyFix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809051800224_pickupUdate.cs" />
+    <Compile Include="Migrations\201809051800224_pickupUdate.Designer.cs">
+      <DependentUpon>201809051800224_pickupUdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809051915574_debtproperty.cs" />
+    <Compile Include="Migrations\201809051915574_debtproperty.Designer.cs">
+      <DependentUpon>201809051915574_debtproperty.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -325,7 +337,9 @@
     <Content Include="Views\Shared\_CustomerLayout.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\Customer\Details.cshtml" />
-    <Content Include="Views\Customer\Test.cshtml" />
+    <Content Include="Views\Customer\EditPickUp.cshtml" />
+    <Content Include="Views\Customer\SpecialPickUp.cshtml" />
+    <Content Include="Views\Customer\TemporaryPickUp.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -371,6 +385,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809051428167_ForeignKeyPickUp.resx">
       <DependentUpon>201809051428167_ForeignKeyPickUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809051433296_PickUpForeignKeyFix.resx">
+      <DependentUpon>201809051433296_PickUpForeignKeyFix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809051800224_pickupUdate.resx">
+      <DependentUpon>201809051800224_pickupUdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809051915574_debtproperty.resx">
+      <DependentUpon>201809051915574_debtproperty.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

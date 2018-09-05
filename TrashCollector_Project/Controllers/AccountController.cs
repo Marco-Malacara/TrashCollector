@@ -79,6 +79,12 @@ namespace TrashCollector_Project.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+                    ApplicationDbContext db = new ApplicationDbContext();
+                    var user = db.Users.SingleOrDefault(u => u.Email == model.Email);
+                    if (user != null)
+                    {
+                        return RedirectToLocal(user, db);
+                    }
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
@@ -444,6 +450,15 @@ namespace TrashCollector_Project.Controllers
                 return Redirect(returnUrl);
             }
             return RedirectToAction("Index", "Home");
+        }
+        private ActionResult RedirectToLocal(ApplicationUser user, ApplicationDbContext db)
+        {
+            if (UserManager.IsInRole(user.Id, "Customer"))
+            {
+                var customer = db.Customer.Single(c => c.ApplicationUserId == user.Id);
+                return RedirectToAction("Index", "Customer", new { id = customer.Id });
+            }
+            return RedirectToAction("Regiseter", "Account");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult

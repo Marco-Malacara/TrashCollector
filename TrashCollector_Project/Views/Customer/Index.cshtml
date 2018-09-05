@@ -6,22 +6,23 @@
 
 <h2>Index</h2>
 <div class="jumbotron">
-    
+
 </div>
 
 <div>
     <button class="btn btn-block btn-lg">
-        @Html.ActionLink("Edit Pickup Day", "EditPickUp")
+        @Html.ActionLink("Edit Pickup Day", "EditPickUp", new { id = Model.Id}, null)
     </button>
     <button class="btn btn-block btn-lg">
-        @Html.ActionLink("Special Pickup", "SpecialPickUp")
+        @Html.ActionLink("Special Pickup", "SpecialPickUp", new { id = Model.Id }, null)
     </button>
     <button class="btn btn-block btn-lg">
-        @Html.ActionLink("Start/End Pickup", "TemporaryPickUp")
+        @Html.ActionLink("Start/End Pickup", "TemporaryPickUp", new { id = Model.Id }, null)
     </button>
     <button class="btn btn-block btn-lg">
-        @Html.ActionLink("Account Information", "AccountInformation")
+        @Html.ActionLink("Account Information", "Details", new { id = Model.Id }, null)
     </button>
-    <button class="btn btn-danger btn-sm" style="background-color:red; color:white; right:auto">DELETE ACCOUNT
+    <button class="btn btn-danger btn-sm" style="background-color:red; color:white; right:auto">
+        DELETE ACCOUNT
     </button>
 </div>
