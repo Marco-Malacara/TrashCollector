@@ -197,6 +197,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Default.aspx.cs">
@@ -236,6 +237,14 @@
     <Compile Include="Migrations\201809041908237_geolocaiting.cs" />
     <Compile Include="Migrations\201809041908237_geolocaiting.Designer.cs">
       <DependentUpon>201809041908237_geolocaiting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809051419164_PickupForMonth.cs" />
+    <Compile Include="Migrations\201809051419164_PickupForMonth.Designer.cs">
+      <DependentUpon>201809051419164_PickupForMonth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809051428167_ForeignKeyPickUp.cs" />
+    <Compile Include="Migrations\201809051428167_ForeignKeyPickUp.Designer.cs">
+      <DependentUpon>201809051428167_ForeignKeyPickUp.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -320,6 +329,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Employee\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -355,6 +365,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809041908237_geolocaiting.resx">
       <DependentUpon>201809041908237_geolocaiting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809051419164_PickupForMonth.resx">
+      <DependentUpon>201809051419164_PickupForMonth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809051428167_ForeignKeyPickUp.resx">
+      <DependentUpon>201809051428167_ForeignKeyPickUp.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -52,8 +52,8 @@ namespace TrashCollector_Project.Controllers
                     Schedule = Convert.ToDateTime(collection["Schedule"])
                 };
                 db.Customer.Add(customer);
-                SetUpWeeklyPickUp(id);
                 db.SaveChanges();
+                SetUpWeeklyPickUp(id);
                 return RedirectToAction("Index", "Customer", null);
             }
             catch
@@ -65,13 +65,21 @@ namespace TrashCollector_Project.Controllers
         {
             ApplicationDbContext db = new ApplicationDbContext();
             Customer customer = db.Customer.SingleOrDefault(identity => identity.ApplicationUserId == id);
+            SetUpWeeklyPickUp(customer);
             return View(customer);
         }
+        [HttpPost]
         public ActionResult SetUpWeeklyPickUp(Customer customer)
         {
             ApplicationDbContext db = new ApplicationDbContext();
-            customer.Schedule = DateTime.Now.AddDays(7);
-            db.Entry(customer).State = EntityState.Modified;
+            Pickup pickup = new Pickup();
+            DateTime? date = customer.Schedule;
+            pickup.WeekOne = date;
+            pickup.WeekTwo = date.Value.AddDays(7);
+            pickup.WeekThree = date.Value.AddDays(14);
+            pickup.WeekFour = date.Value.AddDays(21);
+            db.Pickup.Add(pickup);
+            customer.PickupId = pickup.Id;
             db.SaveChanges();
             return RedirectToAction("Index", "Customer", null);
         }

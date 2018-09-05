@@ -25,5 +25,8 @@ namespace TrashCollector_Project.Models
         [ForeignKey("ApplicationUser")]
         public string ApplicationUserId { get; set; }
         public ApplicationUser ApplicationUser { get; set; }
+        [ForeignKey("Pickup")]
+        public int? PickupId { get; set; }
+        public Pickup Pickup { get; set; }
     }
 }

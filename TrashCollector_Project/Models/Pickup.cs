@@ -10,5 +10,9 @@ namespace TrashCollector_Project.Models
     {
         [Key]
         public int Id { get; set; }
+        public DateTime? WeekOne { get; set; }
+        public DateTime? WeekTwo { get; set; }
+        public DateTime? WeekThree { get; set; }
+        public DateTime? WeekFour { get; set; }
     }
 }
