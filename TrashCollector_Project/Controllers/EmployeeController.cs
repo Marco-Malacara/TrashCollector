@@ -13,7 +13,7 @@ namespace TrashCollector_Project.Controllers
         {
             ApplicationDbContext db = new ApplicationDbContext();
             Employee employee = db.Employee.Find(id);
-            return View();
+            return View(db.Customer.ToList());
         }
 
         // GET: Employee/Details/5

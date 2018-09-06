@@ -30,8 +30,4 @@ namespace TrashCollector_Project.Models
         public int? PickupId { get; set; }
         public Pickup Pickup { get; set; }
     }
-    public class CustomerListView
-    {
-        public List<Customer> customerList { get; set; }
-    }
 }

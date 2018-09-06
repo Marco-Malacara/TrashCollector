@@ -1,24 +1,90 @@
 ﻿@model IEnumerable<TrashCollector_Project.Models.Customer>
-
 @{
-
     ViewBag.Title = "Index";
 }
-<body>
-        <h2>Customers</h2>
-    <table class="table table-hover">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-        </tr>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-    `       </tr>
-        }
-    </table>
-</body>
+
+<h2>Customers</h2>
+<table class="table col-lg-1">
+
+    <tr>
+
+        <th>
+
+            Customer
+
+        </th>
+
+        <th>
+
+            State
+
+        </th>
+
+        <th>
+
+            City
+
+        </th>
+
+        <th>
+
+            Address
+
+        </th>
+
+        <th>
+
+            Zipcode
+
+        </th>
+
+        <th>
+
+            PickUp
+
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+
+            @Html.Encode(item.Name)
+
+        </td>
+
+        <td>
+
+            @Html.Encode(item.State)
+
+        </td>
+
+        <td>
+
+            @Html.Encode(item.City)
+
+        </td>
+
+        <td>
+
+            @Html.Encode(item.Address)
+
+        </td>
+
+        <td>
+
+            @Html.Encode(item.Zipcode)
+
+        </td>
+
+        <td>
+
+            @Html.Encode(item.Schedule)
+
+        </td>
+
+    </tr>
+    }
+</table>
