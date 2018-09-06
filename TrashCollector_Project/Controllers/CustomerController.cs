@@ -1,11 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using System.Data.Entity;
 using TrashCollector_Project.Models;
 using System;
-using Microsoft.AspNet.Identity;
 
 namespace TrashCollector_Project.Controllers
 {

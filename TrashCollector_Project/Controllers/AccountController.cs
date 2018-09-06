@@ -161,9 +161,9 @@ namespace TrashCollector_Project.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    var roleresult = UserManager.AddToRole(user.Id, "Customer");
+                    var roleresult = UserManager.AddToRole(user.Id, "Employee");
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-                    return RedirectToAction("Create", "Customer", new { id = user.Id });
+                    return RedirectToAction("Create", "Employee", new { id = user.Id });
                 }
                 AddErrors(result);
             }

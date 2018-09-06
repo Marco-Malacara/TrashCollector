@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
+using System.Data.Entity;
+using TrashCollector_Project.Models;
+using System;
 
 namespace TrashCollector_Project.Controllers
 {
@@ -32,8 +32,7 @@ namespace TrashCollector_Project.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
-
+                ApplicationDbContext db = 
                 return RedirectToAction("Index");
             }
             catch
