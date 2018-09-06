@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Web;
 
 namespace TrashCollector_Project.Models
 {
@@ -31,5 +29,9 @@ namespace TrashCollector_Project.Models
         [ForeignKey("Pickup")]
         public int? PickupId { get; set; }
         public Pickup Pickup { get; set; }
+    }
+    public class CustomerListView
+    {
+        public List<Customer> customerList { get; set; }
     }
 }

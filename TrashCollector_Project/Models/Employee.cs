@@ -11,8 +11,7 @@ namespace TrashCollector_Project.Models
     {
         [Key]
         public int Id { get; set; }
-        public string FristName { get; set; }
-        public string LastName { get; set; }
+        public string Name { get; set; }
         public int Zipcode { get; set; }
         [ForeignKey("ApplicationUser")]
         public string ApplicationUserId { get; set; }

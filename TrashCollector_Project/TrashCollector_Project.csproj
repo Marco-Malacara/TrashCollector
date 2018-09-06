@@ -258,6 +258,26 @@
     <Compile Include="Migrations\201809051915574_debtproperty.Designer.cs">
       <DependentUpon>201809051915574_debtproperty.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809060504503_addedpickupfk.cs" />
+    <Compile Include="Migrations\201809060504503_addedpickupfk.Designer.cs">
+      <DependentUpon>201809060504503_addedpickupfk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809060521188_addedlisttoemployeemodel.cs" />
+    <Compile Include="Migrations\201809060521188_addedlisttoemployeemodel.Designer.cs">
+      <DependentUpon>201809060521188_addedlisttoemployeemodel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809060531323_customerlistmovedtocustomer.cs" />
+    <Compile Include="Migrations\201809060531323_customerlistmovedtocustomer.Designer.cs">
+      <DependentUpon>201809060531323_customerlistmovedtocustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809060715288_OwnClassForCustomerLis.cs" />
+    <Compile Include="Migrations\201809060715288_OwnClassForCustomerLis.Designer.cs">
+      <DependentUpon>201809060715288_OwnClassForCustomerLis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809060749456_anotherUpdate.cs" />
+    <Compile Include="Migrations\201809060749456_anotherUpdate.Designer.cs">
+      <DependentUpon>201809060749456_anotherUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -340,10 +360,11 @@
     <Content Include="Views\Customer\EditPickUp.cshtml" />
     <Content Include="Views\Customer\SpecialPickUp.cshtml" />
     <Content Include="Views\Customer\TemporaryPickUp.cshtml" />
+    <Content Include="Views\Employee\Create.cshtml" />
+    <Content Include="Views\Employee\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Employee\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -394,6 +415,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809051915574_debtproperty.resx">
       <DependentUpon>201809051915574_debtproperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809060504503_addedpickupfk.resx">
+      <DependentUpon>201809060504503_addedpickupfk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809060521188_addedlisttoemployeemodel.resx">
+      <DependentUpon>201809060521188_addedlisttoemployeemodel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809060531323_customerlistmovedtocustomer.resx">
+      <DependentUpon>201809060531323_customerlistmovedtocustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809060715288_OwnClassForCustomerLis.resx">
+      <DependentUpon>201809060715288_OwnClassForCustomerLis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809060749456_anotherUpdate.resx">
+      <DependentUpon>201809060749456_anotherUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

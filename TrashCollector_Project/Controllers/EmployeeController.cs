@@ -9,8 +9,10 @@ namespace TrashCollector_Project.Controllers
     public class EmployeeController : Controller
     {
         // GET: Employee
-        public ActionResult Index()
+        public ActionResult Index(int id)
         {
+            ApplicationDbContext db = new ApplicationDbContext();
+            Employee employee = db.Employee.Find(id);
             return View();
         }
 
@@ -28,56 +30,20 @@ namespace TrashCollector_Project.Controllers
 
         // POST: Employee/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(FormCollection collection, string id)
         {
             try
             {
-                ApplicationDbContext db = 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Employee/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Employee/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Employee/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Employee/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
+                ApplicationDbContext db = new ApplicationDbContext();
+                Employee employee = new Employee()
+                {
+                    ApplicationUserId = id,
+                    Name = collection["Name"],
+                    Zipcode = Convert.ToInt32(collection["Zipcode"]),
+                };
+                db.Employee.Add(employee);
+                db.SaveChanges();
+                return RedirectToAction("Index", "Employee", new { id = employee.Id });
             }
             catch
             {

@@ -161,9 +161,9 @@ namespace TrashCollector_Project.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    var roleresult = UserManager.AddToRole(user.Id, "Employee");
+                    var roleresult = UserManager.AddToRole(user.Id, "Customer");
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-                    return RedirectToAction("Create", "Employee", new { id = user.Id });
+                    return RedirectToAction("Create", "Customer", new { id = user.Id });
                 }
                 AddErrors(result);
             }
@@ -457,6 +457,11 @@ namespace TrashCollector_Project.Controllers
             {
                 var customer = db.Customer.Single(c => c.ApplicationUserId == user.Id);
                 return RedirectToAction("Index", "Customer", new { id = customer.Id });
+            }
+            if (UserManager.IsInRole(user.Id, "Employee"))
+            {
+                var Employee = db.Employee.Single(e => e.ApplicationUserId == user.Id);
+                return RedirectToAction("Index", "Employee", new { id = Employee.Id });
             }
             return RedirectToAction("Regiseter", "Account");
         }
